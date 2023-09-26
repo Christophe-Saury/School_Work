@@ -1,5 +1,19 @@
+/*
+Write a Java program that sums up the sequence that is defined by given recurrence
+𝑎 = 1,
+0
+𝑎
+𝑛 = 2𝑎
+𝑛−1 + 1, (𝑛 = 1, 2, 3, ....)
+The variables you can use inside the main method will be restricted as follows
+1) int a // you have to store the term of given sequence to this variable
+2) int sum // you have to store the result of summation to this variable
+3) int i // this variable is for the index inside the loop
+Specifically, the operators that can be used with the variable 'a' are restricted to
+bitwise operators and assignment operators. That means, you cannot use any
+arithmetic operators( ‘+’, ‘-’, ‘*’, ‘/’ …) with variable ‘a’
+ */
 
-// add explanations
 public class Problem1 {
 
     private int a;
@@ -16,7 +30,7 @@ public class Problem1 {
     }
 
     public void call_sequence(int max_n){
-        // Check How to replace this by streams
+        // Check How to replace this by streams API
         for(int i=0; i<=max_n; i++) {
             this.calculate_a(this.getA(), i);
             this.setSum(this.getSum()+ this.getA());

@@ -1,3 +1,14 @@
+/*
+Write a Java program that draws the Hourglass-like (모래시계) shape only using two
+permitted characters - ‘*’, ‘ ‘ (asterisk, blank)
+You don’t need to draw the shape exactly as the expected output below, that means
+you don’t have to count down the exact number of asterisks in the example below.
+Full score will be given for the program that draws a symmetric Hourglass-like shape.
+(If the output is asymmetric to the center of the draw, there will be some point
+deduction.)
+It is mandatory to use a loop to draw the desired shape. If you don’t use any loop to
+draw you will get 0 points.
+*/
 import java.util.Scanner;
 
 public class Problem2 {
