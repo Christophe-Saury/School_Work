@@ -13,14 +13,13 @@ Your account number is between 1 and 100000000000 as integer.
 
 */
 
-// TODO check clean code principles + streams api + other apis + write tests + separate in different fonctions
+// TODO check clean code principles + streams api + other apis + write tests
 import java.util.Scanner;
 
 public class Problem5 {
 
     private long account_number;
     private int balance;
-
 
     // ------------------------------ MAIN METHOD -----------------------------------
     public static void main(String[] args) {
@@ -42,7 +41,7 @@ public class Problem5 {
         }
     }
 
-
+    // ---------------------------- Getters and Setters -------------------------------------------
     public long getAccount_number() {
         return account_number;
     }
@@ -59,6 +58,8 @@ public class Problem5 {
         this.balance = balance;
     }
 
+
+    // ------------------------------ Methods to create an account ------------------------------------------
     public void create_account(Scanner scanner, Problem5 problem5){
         System.out.println("Create your account number : ");
 
@@ -85,7 +86,7 @@ public class Problem5 {
     }
 
 
-
+    // --------------------------------- Methods to make the user perform an action -------------------------
     public int choose_action(Scanner scanner, Problem5 problem5){
         account_operations:
         System.out.println("--------------------------------------------------------------------");
@@ -134,7 +135,4 @@ public class Problem5 {
     public void check_balance(Problem5 problem5){
         System.out.println("Balance : " + problem5.getBalance());
     }
-
-
-
 }
