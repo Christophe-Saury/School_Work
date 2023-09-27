@@ -8,7 +8,6 @@ loop.
 4. If the character is 'X', print "miss" along with the generated random number and continue
 to the next iteration of the loop.
 */
-import java.util.Scanner;
 
 public class Problem3 {
 

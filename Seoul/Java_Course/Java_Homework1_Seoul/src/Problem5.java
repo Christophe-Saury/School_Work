@@ -24,13 +24,12 @@ public class Problem5 {
     public static void main(String[] args) {
 
         Problem5 problem5 = new Problem5();
-        long account_number=0;
         Scanner scanner = new Scanner(System.in);
 
         problem5.create_account(scanner, problem5);
 
         while(true) {
-            int chosen_action = problem5.choose_action(scanner, problem5);
+            int chosen_action = problem5.choose_action(scanner);
 
             if(chosen_action != 4){
                problem5.do_action(scanner, problem5, chosen_action);
@@ -81,19 +80,17 @@ public class Problem5 {
     }
 
     public boolean isAccountNbWithinRange(long account_number){
-        return (account_number <= 0 | account_number > 100000000000L) ? true : false;
+        return (account_number <= 0 | account_number > 100000000000L);
     }
 
 
     // --------------------------------- Methods to make the user perform an action -------------------------
-    public int choose_action(Scanner scanner, Problem5 problem5){
-        account_operations:
+    public int choose_action(Scanner scanner){
         System.out.println("--------------------------------------------------------------------");
         System.out.println("1. Deposit | 2. Withdrawal | 3. Balance | 4. Exit");
         System.out.println("--------------------------------------------------------------------");
         System.out.println("Input : ");
-        int chosen_option = scanner.nextInt();
-        return chosen_option;
+        return scanner.nextInt();
     }
 
     public void do_action(Scanner scanner, Problem5 problem5, int chosen_option){
