@@ -11,6 +11,8 @@ draw you will get 0 points.
 */
 import java.util.Scanner;
 
+// TODO check to replace for by streams api and replace other apis
+// TODO check clean code principles
 public class Problem2 {
 
     private int original_length;
@@ -57,7 +59,7 @@ public class Problem2 {
 
         String result = this.getResult();
         for(int i = 0; i<this.original_length; i++){
-            result+="_";
+            result += "_";
         }
         this.setResult(result);
     }
