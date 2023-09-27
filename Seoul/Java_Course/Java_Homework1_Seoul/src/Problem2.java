@@ -73,10 +73,10 @@ public class Problem2 {
         int side_length = (this.original_length - line_length)/2;
         String line = "\n";
 
-        line = this.draw_side_space(line, side_length);
+        line = this.draw_side_space(line, side_length); // adds the side space to the line
 
         for(int i=0; i<line_length; i++){
-            line += "*";
+            line += "*";          // adding the * to the line in between the side spaces
         }
 
         line = this.draw_side_space(line, side_length);

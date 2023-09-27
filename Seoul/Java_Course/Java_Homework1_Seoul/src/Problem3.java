@@ -14,6 +14,8 @@ import java.util.Scanner;
 
 public class Problem3 {
 
+
+    // ---------------------------- Main Method ----------------------
     public static void main(String[] args) {
 
         String input = "XXXXOXXXX";

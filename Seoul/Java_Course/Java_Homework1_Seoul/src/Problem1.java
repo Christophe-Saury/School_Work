@@ -19,12 +19,33 @@ public class Problem1 {
     private int a;
     private int sum;
 
+    // ---------------------------- Main method ---------------------------------------
     public static void main (String[] args) {
         Problem1 problem1 = new Problem1();
         problem1.call_sequence(9);
         problem1.print_sum();
     }
 
+
+    // ---------------------------- Getters and Setters --------------------------------
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    public int getSum() {
+        return sum;
+    }
+
+    public void setSum(int sum) {
+        this.sum = sum;
+    }
+
+
+    // --------------------------------- Class Methods ----------------------------
     public void print_sum(){
         System.out.println("This is the sum : "+ this.getSum());
     }
@@ -45,19 +66,5 @@ public class Problem1 {
 
     }
 
-    public int getA() {
-        return a;
-    }
 
-    public void setA(int a) {
-        this.a = a;
-    }
-
-    public int getSum() {
-        return sum;
-    }
-
-    public void setSum(int sum) {
-        this.sum = sum;
-    }
 }
