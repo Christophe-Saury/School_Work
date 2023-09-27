@@ -13,7 +13,6 @@ Your account number is between 1 and 100000000000 as integer.
 
 */
 
-// TODO check clean code principles + streams api + other apis + write tests
 import java.util.Scanner;
 
 public class Problem5 {

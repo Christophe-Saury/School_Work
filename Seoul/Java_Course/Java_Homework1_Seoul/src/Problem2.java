@@ -11,8 +11,6 @@ draw you will get 0 points.
 */
 import java.util.Scanner;
 
-// TODO check to replace for by streams api and replace other apis
-// TODO check clean code principles
 public class Problem2 {
 
     private int original_length;

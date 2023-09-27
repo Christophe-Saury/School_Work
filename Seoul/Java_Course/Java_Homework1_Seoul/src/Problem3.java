@@ -10,8 +10,6 @@ to the next iteration of the loop.
 */
 import java.util.Scanner;
 
-// TODO check clean cpde + fpr loop streams
-
 public class Problem3 {
 
 

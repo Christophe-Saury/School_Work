@@ -51,8 +51,6 @@ public class Problem1 {
     }
 
     public void call_sequence(int max_n){
-        // TODO Check How to replace this by streams API
-        // TODO CHeck clean code principles
         for(int i=0; i<=max_n; i++) {
             this.calculate_a(this.getA(), i);
             this.setSum(this.getSum()+ this.getA());
