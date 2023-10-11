@@ -63,20 +63,25 @@ public class Problem5 {
 
         boolean bError = true;   // Try and catch that checks if input is as it should be
         while (bError) {
-            if (scanner.hasNextLong()) {
-                account_number = scanner.nextLong();
-                if (problem5.isAccountNbWithinRange(account_number)) {
-                    scanner.next();
-                    continue;
-                }
-            } else {
+            if(filter_number(scanner, problem5)){ // Makes sure that input is a long and within range
                 scanner.next();
                 continue;
             }
             bError = false;
         }
-
         problem5.setAccount_number(account_number);
+    }
+
+    public boolean filter_number(Scanner scanner, Problem5 problem5){
+        if (scanner.hasNextLong()) {
+            account_number = scanner.nextLong();
+            if (problem5.isAccountNbWithinRange(account_number)) {
+                return true;
+            }
+        } else {
+            return true;
+        }
+        return false;
     }
 
     public boolean isAccountNbWithinRange(long account_number){
