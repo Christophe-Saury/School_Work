@@ -1,18 +1,19 @@
 PImage seoulImage;
-PImage myPhoto; // Your replacement photo
-int tileSize = 45; // Size of each tile in pixels
-float zoomLevel = 1.0; // Initial zoom level
+PImage[] photos; // Array to store your replacement photos
+int tileSize = 50; // Size of each tile in pixels
+float zoomLevel = 0.1; // Initial zoom level
+int borderSize = 2; // Size of the black border
 
 void setup() {
-  size(1800, 1000);
+  size(1600, 1200);
   seoulImage = loadImage("National-Animal-Of-South-Korea.jpg");
   seoulImage.resize(width, height); // Resize the image to fit the canvas
-  myPhoto = loadImage("photo- (4).jpg"); // Load your replacement photo
+  loadPhotos(); // Load your replacement photos
   noLoop(); // Disable continuous drawing
 }
 
 void draw() {
-  background(255);
+  background(200); // Set the background color to grey (change the value to your preferred shade)
   scale(zoomLevel); // Apply the current zoom level
   
   // Calculate the number of tiles based on the current tileSize and zoom level
@@ -24,16 +25,17 @@ void draw() {
       // Calculate the average color of the tile
       color avgColor = getAverageColor(x * tileSize, y * tileSize, tileSize, tileSize);
       
-      // If it's the first tile, blend the photo with the average color
-      if (x == 0 && y == 0) {
-        blendMode(BLEND); // Set the blend mode to normal blending
-        tint(avgColor, 100); // Apply the average color as a tint with some transparency
-        image(myPhoto, x * tileSize, y * tileSize, tileSize, tileSize);
-      } else {
-        // Fill a square with the average color
-        fill(avgColor);
-        rect(x * tileSize, y * tileSize, tileSize, tileSize);
-      }
+      // Draw a black border around each tile
+      fill(0);
+      noStroke(); // No outline for the border
+      rect(x * tileSize - borderSize, y * tileSize - borderSize, tileSize + borderSize * 2, tileSize + borderSize * 2);
+      
+      // Randomly select a photo from the array
+      PImage randomPhoto = photos[int(random(photos.length))];
+      
+      // Apply average color as a tint with some transparency to the border pixels
+      tint(avgColor, 200); // Higher transparency for the border pixels
+      image(randomPhoto, x * tileSize, y * tileSize, tileSize, tileSize);
     }
   }
 }
@@ -58,6 +60,14 @@ color getAverageColor(int x, int y, int w, int h) {
   b /= numPixels;
   
   return color(r, g, b);
+}
+
+void loadPhotos() {
+  int numPhotos = 45; // Adjust to the number of photos you have
+  photos = new PImage[numPhotos];
+  for (int i = 0; i < numPhotos; i++) {
+    photos[i] = loadImage("Seoul/photo- (" + (i + 1) + ").jpg");
+  }
 }
 
 void mouseWheel(MouseEvent event) {
