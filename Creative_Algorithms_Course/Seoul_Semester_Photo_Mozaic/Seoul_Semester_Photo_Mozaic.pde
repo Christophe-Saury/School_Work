@@ -1,7 +1,7 @@
 PImage seoulImage;
 PImage[] photos; // Array to store your replacement photos
-int tileSize = 50; // Size of each tile in pixels
-float zoomLevel = 0.1; // Initial zoom level
+int tileSize = 40; // Size of each tile in pixels
+float zoomLevel = 0.2; // Initial zoom level
 int borderSize = 2; // Size of the black border
 
 void setup() {
