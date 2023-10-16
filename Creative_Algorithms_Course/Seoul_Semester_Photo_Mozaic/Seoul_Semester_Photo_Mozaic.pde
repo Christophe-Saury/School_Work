@@ -95,10 +95,10 @@ void addPhotos(color avgColor, int x, int y){
 
 
 void loadPhotos() {
-  int numPhotos = 10; // Adjust to desired number of photos
+  int numPhotos = 45; // Adjust to desired number of photos
   photos = new PImage[numPhotos];
   for (int i = 0; i < numPhotos; i++) {
-    photos[i] = loadImage("photos/photo- (" + (i + 1) + ").jpg"); 
+    photos[i] = loadImage("Seoul/photo- (" + (i + 1) + ").jpg"); 
   }
 }
 
