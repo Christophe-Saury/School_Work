@@ -1,44 +1,59 @@
+/*
+I created this collage for the creative algorithms assignement.
+The goal is to have a collage that represents my semester in Seoul and uses the
+photos I took during the semester.
+A way to make this code better would be to implement :
+- lazy loading for the images 
+so that the images don't take as long to load when not all the tiles are visible.
+- It would also be good to see how I can make the code able to use thousands of photos
+without running into memory issues.
+*/
+
+
 PImage seoulImage;
-PImage[] photos; // Array to store your replacement photos
+PImage[] photos; // Array to store my photos
 int tileSize = 40; // Size of each tile in pixels
 float zoomLevel = 0.2; // Initial zoom level
-int borderSize = 2; // Size of the black border
+int borderSize = 2; // Size of the border between tiles
 
 void setup() {
   size(1800, 1200);
   seoulImage = loadImage("National-Animal-Of-South-Korea.jpg");
-  seoulImage.resize(width, height); // Resize the image to fit the canvas
-  loadPhotos(); // Load your replacement photos
-  noLoop(); // Disable continuous drawing
+  seoulImage.resize(width, height); // Resize the image to the size of the canvas
+  loadPhotos(); // Load my photos
+  noLoop(); // Disable looping of draw()
 }
 
 void draw() {
-  background(200); // Set the background color to grey (change the value to your preferred shade)
+  background(200); 
   scale(zoomLevel); // Apply the current zoom level
   
-  // Calculate the number of tiles based on the current tileSize and zoom level
-  int numTilesX = int(width / (tileSize * zoomLevel));
-  int numTilesY = int(height / (tileSize * zoomLevel));
+  int numTilesX = getNumTilesX();
+  int numTilesY = getNumTilesY();
   
   for (int y = 0; y < numTilesY; y++) {
     for (int x = 0; x < numTilesX; x++) {
-      // Calculate the average color of the tile
+      
       color avgColor = getAverageColor(x * tileSize, y * tileSize, tileSize, tileSize);
       
-      // Draw a black border around each tile
-      fill(0);
-      noStroke(); // No outline for the border
-      rect(x * tileSize - borderSize, y * tileSize - borderSize, tileSize + borderSize * 2, tileSize + borderSize * 2);
+      drawTiles(x, y);
+     
+     addPhotos(avgColor, x, y);
       
-      // Randomly select a photo from the array
-      PImage randomPhoto = photos[int(random(photos.length))];
-      
-      // Apply average color as a tint with some transparency to the border pixels
-      tint(avgColor, 200); // Higher transparency for the border pixels
-      image(randomPhoto, x * tileSize, y * tileSize, tileSize, tileSize);
     }
   }
 }
+
+int getNumTilesX(){
+  int numTilesX = int(width / (tileSize * zoomLevel));
+  return numTilesX;
+}
+
+int getNumTilesY(){
+  int numTilesY = int(height / (tileSize * zoomLevel));
+  return numTilesY;
+}
+
 
 color getAverageColor(int x, int y, int w, int h) {
   float r = 0;
@@ -62,11 +77,28 @@ color getAverageColor(int x, int y, int w, int h) {
   return color(r, g, b);
 }
 
+
+void drawTiles(int x, int y){
+   fill(0);
+   noStroke();
+   rect(x * tileSize - borderSize, y * tileSize - borderSize, tileSize + borderSize * 2, tileSize + borderSize * 2);
+}
+
+void addPhotos(color avgColor, int x, int y){
+  
+  PImage randomPhoto = photos[int(random(photos.length))];
+     
+  // apply a tint to the images using the avg color of the tile
+  tint(avgColor, 200);
+  image(randomPhoto, x * tileSize, y * tileSize, tileSize, tileSize);
+}
+
+
 void loadPhotos() {
-  int numPhotos = 45; // Adjust to the number of photos you have
+  int numPhotos = 10; // Adjust to desired number of photos
   photos = new PImage[numPhotos];
   for (int i = 0; i < numPhotos; i++) {
-    photos[i] = loadImage("Seoul/photo- (" + (i + 1) + ").jpg");
+    photos[i] = loadImage("photos/photo- (" + (i + 1) + ").jpg"); 
   }
 }
 
