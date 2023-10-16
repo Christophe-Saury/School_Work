@@ -5,7 +5,7 @@ float zoomLevel = 0.2; // Initial zoom level
 int borderSize = 2; // Size of the black border
 
 void setup() {
-  size(1600, 1200);
+  size(1800, 1200);
   seoulImage = loadImage("National-Animal-Of-South-Korea.jpg");
   seoulImage.resize(width, height); // Resize the image to fit the canvas
   loadPhotos(); // Load your replacement photos
