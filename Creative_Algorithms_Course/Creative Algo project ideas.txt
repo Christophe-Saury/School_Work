@@ -1,0 +1,27 @@
+Creative Algo project ideas
+
+Data visualization projects :
+
+Improve my previous photo collage project
+Do the i feel fine project with data scraping / Word cloud
+do a map of the world in 3D with arrows representing global trade relations
+do a map of somewhere else representing data and replace map by points like in a photo collage project
+Visualize sports data
+Visualize spending in korea
+visualize weight loss and measurements data and add pictures (face changes, body changes...)
+something linked to dance ?
+something linked to the tyson fury - francis ngannou fight or boxing in general. Visualize the fight data and determine if the decision was correct by giving scores for each round
+
+
+Other projects :
+Optical Illusions
+
+
+tring searchQuery = "happy,calm,good,joy,relief,satisfaction,excitement,bad,sad,hurt,ngry, depressed, lonely, mad, frustrated, annoyed";
+dissapointed
+
+
+One point perspective city drawing with natural elements that can be added or removed (rain, lightning, fire, smoke) and moving cars/people
+One point perspective swamp?
+
+Leaf generator

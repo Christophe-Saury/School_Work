@@ -13,7 +13,7 @@ without running into memory issues.
 PImage seoulImage;
 PImage[] photos; // Array to store my photos
 int tileSize = 40; // Size of each tile in pixels
-float zoomLevel = 0.2; // Initial zoom level
+float zoomLevel = 0.8; // Initial zoom level
 int borderSize = 2; // Size of the border between tiles
 
 void setup() {
