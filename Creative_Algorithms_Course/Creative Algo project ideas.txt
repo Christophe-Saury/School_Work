@@ -24,4 +24,6 @@ dissapointed
 One point perspective city drawing with natural elements that can be added or removed (rain, lightning, fire, smoke) and moving cars/people
 One point perspective swamp?
 
+Machine learning related project?
+
 Leaf generator
